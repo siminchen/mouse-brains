@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<MINiML
+   xmlns="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.ncbi.nlm.nih.gov/geo/info/MINiML http://www.ncbi.nlm.nih.gov/geo/info/MINiML.xsd"
+   version="0.5.0" >
+
+  <Contributor iid="contrib1">
+    <Person><First>kenian</First><Last>chen</Last></Person>
+    <Email>chenkn007@gmail.com</Email>
+    <Laboratory>Jiaqian Wu Lab</Laboratory>
+    <Department>Neurosugery</Department>
+    <Organization>UThealth</Organization>
+    <Address>
+      <Line>Pressler St</Line>
+      <City>Houston</City>
+      <State>TX</State>
+      <Zip-Code>77030</Zip-Code>
+      <Country>USA</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib2">
+    <Organization>GEO</Organization>
+    <Address>
+      <City></City>
+      <Country>USA</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib3">
+    <Person><First>Ye</First><Last>Zhang</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib4">
+    <Person><First>Steven</First><Middle>A</Middle><Last>Sloan</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib5">
+    <Person><First>Anja</First><Middle>R</Middle><Last>Scholze</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib6">
+    <Person><First>Christine</First><Last>Caneda</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib7">
+    <Person><First>Nadine</First><Last>Ruderisch</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib8">
+    <Person><First>Shuyun</First><Last>Deng</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib9">
+    <Person><First>Richard</First><Last>Daneman</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib10">
+    <Person><First>Ben</First><Middle>A</Middle><Last>Barres</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib11">
+    <Person><First>Jia</First><Middle>Q</Middle><Last>Wu</Last></Person>
+  </Contributor>
+
+  <Database iid="GEO">
+    <Name>Gene Expression Omnibus (GEO)</Name>
+    <Public-ID>GEO</Public-ID>
+    <Organization>NCBI NLM NIH</Organization>
+    <Web-Link>http://www.ncbi.nlm.nih.gov/geo</Web-Link>
+    <Email>geo@ncbi.nlm.nih.gov</Email>
+  </Database>
+
+  <Platform iid="GPL13112">
+    <Status database="GEO">
+      <Submission-Date>2011-02-02</Submission-Date>
+      <Release-Date>2011-02-02</Release-Date>
+      <Last-Update-Date>2014-09-05</Last-Update-Date>
+    </Status>
+    <Title>Illumina HiSeq 2000 (Mus musculus)</Title>
+    <Accession database="GEO">GPL13112</Accession>
+    <Technology>high-throughput sequencing</Technology>
+    <Distribution>virtual</Distribution>
+    <Organism taxid="10090">Mus musculus</Organism>
+    <Manufacturer></Manufacturer>
+    <Manufacture-Protocol>
+    </Manufacture-Protocol>
+    <Contact-Ref ref="contrib2" />
+  </Platform>
+
+  <Sample iid="GSM1269903">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>Astrocyte1</Title>
+    <Accession database="GEO">GSM1269903</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cerebral cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Characteristics tag="cell type">
+Astrocyte
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380379
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269903/GSM1269903_Astrocyte1.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415123" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380379" />
+  </Sample>
+
+  <Sample iid="GSM1269904">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>Astrocyte2</Title>
+    <Accession database="GEO">GSM1269904</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cerebral cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Characteristics tag="cell type">
+Astrocyte
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380380
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269904/GSM1269904_Astrocyte2.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415122" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380380" />
+  </Sample>
+
+  <Sample iid="GSM1269905">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>Neuron1</Title>
+    <Accession database="GEO">GSM1269905</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cerebral cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Characteristics tag="cell type">
+neuron
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380381
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269905/GSM1269905_Neuron1.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415125" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380381" />
+  </Sample>
+
+  <Sample iid="GSM1269906">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>Neuron2</Title>
+    <Accession database="GEO">GSM1269906</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cerebral cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Characteristics tag="cell type">
+neuron
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380382
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269906/GSM1269906_Neuron2.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415124" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380382" />
+  </Sample>
+
+  <Sample iid="GSM1269907">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>OPC1</Title>
+    <Accession database="GEO">GSM1269907</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cerebral cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Characteristics tag="cell type">
+oligodendrocyte precursor cells
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380383
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269907/GSM1269907_OPC1.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415130" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380383" />
+  </Sample>
+
+  <Sample iid="GSM1269908">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>OPC2</Title>
+    <Accession database="GEO">GSM1269908</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cerebral cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Characteristics tag="cell type">
+oligodendrocyte precursor cells
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380384
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269908/GSM1269908_OPC2.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415126" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380384" />
+  </Sample>
+
+  <Sample iid="GSM1269909">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>NFO1</Title>
+    <Accession database="GEO">GSM1269909</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cerebral cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Characteristics tag="cell type">
+newly formed oligodendrocytes
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380385
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269909/GSM1269909_NFO1.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415131" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380385" />
+  </Sample>
+
+  <Sample iid="GSM1269910">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>NFO2</Title>
+    <Accession database="GEO">GSM1269910</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cerebral cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Characteristics tag="cell type">
+newly formed oligodendrocytes
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380386
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269910/GSM1269910_NFO2.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415127" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380386" />
+  </Sample>
+
+  <Sample iid="GSM1269911">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>MO1</Title>
+    <Accession database="GEO">GSM1269911</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cerebral cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Characteristics tag="cell type">
+myelinating oligodendrocytes
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380387
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269911/GSM1269911_MO1.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415132" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380387" />
+  </Sample>
+
+  <Sample iid="GSM1269912">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>MO2</Title>
+    <Accession database="GEO">GSM1269912</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cerebral cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Characteristics tag="cell type">
+myelinating oligodendrocytes
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380388
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269912/GSM1269912_MO2.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415129" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380388" />
+  </Sample>
+
+  <Sample iid="GSM1269913">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>Microglia1</Title>
+    <Accession database="GEO">GSM1269913</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cerebral cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Characteristics tag="cell type">
+microglia
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380389
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269913/GSM1269913_Microglia1.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415133" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380389" />
+  </Sample>
+
+  <Sample iid="GSM1269914">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>Microglia2</Title>
+    <Accession database="GEO">GSM1269914</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cerebral cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Characteristics tag="cell type">
+microglia
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380390
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269914/GSM1269914_Microglia2.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415128" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380390" />
+  </Sample>
+
+  <Sample iid="GSM1269915">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>Endothelial1</Title>
+    <Accession database="GEO">GSM1269915</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cerebral cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Characteristics tag="cell type">
+endothelial cells
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380391
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269915/GSM1269915_Endothelial1.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415136" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380391" />
+  </Sample>
+
+  <Sample iid="GSM1269916">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>Endothelial2</Title>
+    <Accession database="GEO">GSM1269916</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>cerebral cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Characteristics tag="cell type">
+endothelial cells
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380392
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269916/GSM1269916_Endothelial2.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415134" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380392" />
+  </Sample>
+
+  <Sample iid="GSM1269917">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>WC1</Title>
+    <Accession database="GEO">GSM1269917</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>whole cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380393
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269917/GSM1269917_WC1.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415137" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380393" />
+  </Sample>
+
+  <Sample iid="GSM1269918">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>WC2</Title>
+    <Accession database="GEO">GSM1269918</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>whole cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380394
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269918/GSM1269918_WC2.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415135" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380394" />
+  </Sample>
+
+  <Sample iid="GSM1269919">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-08-16</Last-Update-Date>
+    </Status>
+    <Title>WC3</Title>
+    <Accession database="GEO">GSM1269919</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>whole cortex</Source>
+      <Organism taxid="10090">Mus musculus</Organism>
+      <Characteristics tag="strain">
+FVN/Swiss
+      </Characteristics>
+      <Characteristics tag="tissue">
+cerebral cortex
+      </Characteristics>
+      <Molecule>polyA RNA</Molecule>
+      <Extract-Protocol>
+Total RNA was extracted using the miRNeasy kit (Qiagen) under manufactor’s protocols. The quality was accessed by BioanalyzerTM. Samples with high RNA integrity number (RIN) (&gt;8) were used for library construction. 100ng total RNAs were used for each sequencing library.
+RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina Pipeline (CASAVA) v1.8.2 used for basecalling.
+Reads were mapped to reference genome (version mm9) using Tophat (version 1.3.3) which uses the Bowtie (version 0.12.7)read mapper, Tophat was fed with the option of“–no-novel-juncs”and  option &quot;–G&quot; which supplies Tophat with known transcript GTF file (download from cufflinks website)
+Mapped reads were assembled into RNA transcripts using the Cufflinks software (version 1.3.0). Cufflinks was run using the annotation file (downloaded from Cufflinks web site) of known genes and the mapped reads produced by Tophat. FPKM values (Fragments Per Kilobase of exon model per Million mapped fragments, a normalized gene expression value that are comparable between different samples and genes) together with confidence intervals were estimated for each replicate.
+Genome_build: mm9
+Supplementary_files_format_and_content: Excel file include FPKM values for each Sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL13112" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="SRA Experiment">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByExp/sra/SRX/SRX380/SRX380395
+    </Supplementary-Data>
+    <Supplementary-Data type="XLS">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/samples/GSM1269nnn/GSM1269919/GSM1269919_WC3.xls.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="http://www.ncbi.nlm.nih.gov/biosample/SAMN02415138" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRX380395" />
+  </Sample>
+
+  <Series iid="GSE52564">
+    <Status database="GEO">
+      <Submission-Date>2013-11-20</Submission-Date>
+      <Release-Date>2014-08-15</Release-Date>
+      <Last-Update-Date>2014-09-05</Last-Update-Date>
+    </Status>
+    <Title>An RNA-Seq transcriptome and splicing database of neurons, glia, and vascular cells of the cerebral cortex</Title>
+    <Accession database="GEO">GSE52564</Accession>
+    <Summary>
+Purpose: To better understand the function of the various cell types of the brain, we prospectively purified neurons, astrocytes, oligodendrocyte precursor cells, newly formed oligodendrocytes, myelinating oligodendrocytes, microglia, endothelial cells, and pericytes from mouse cerebral cortex. We generated a transcriptome database for these 8 cell types by RNA sequencing and used a highly sensitive algorithm to detect alternative splicing events in each gene. Our analysis identified thousands of new cell type enriched genes and splicing isoforms that will provide novel markers for cell identification, new tools for genetic manipulation, and numerous insights into the biology of the brain.
+Method Part1:To purify astrocytes, we took advantage of a BAC transgenic mouse line expressing EGFP under the control of regulatory sequences in Aldh1l1-BAC. This line has been previously characterized to have complete astrocyte-specific labeling throughout the brain. Cells from a litter of 8-16 P7 Aldh1l1-EGFP transgenic mice of both genders were pooled together as one biological replicate. The cortices were dissected out and meninges were removed. The tissue was enzymatically dissociated to make a suspension of single cells as described previously. Briefly, the tissue was incubated at 33 °C for 45 minutes in 20 ml of a papain solution containing Earle’s balanced salts (EBSS, Sigma, St. Louis, MO, E7510), D(+)-glucose (22.5mM), NaHCO3 (26mM), DNase (125U/ml, Worthington, Lakewood, NJ, LS002007),  papain (9 U/ml, Worthington, Lakewood, NJ, LS03126), and L-cysteine (1mM, Sigma, St. Louis, MO, C7880). The papain solution was equilibrated with 5% CO2 and 95% O2 gas before and during papain treatment. Following papain treatment, the tissue was washed three times with 4.5ml of inhibitor buffer containing BSA (1.0mg/ml, Sigma, St. Louis, MO, A-8806), and ovomucoid (also known as trypsin inhibitor, 1.0 mg/ml, Roche Diagnostics Corporation, Indianapolis, IN 109878) and then mechanically dissociated by gentle sequential trituration using a 5ml pipette. Dissociated cells were layered on top of 10ml of high concentration inhibitor solution with 5mg/ml BSA and 5mg/ml ovomucoid and centrifuged at 130g for 5 minutes. The cell pellet was then resuspended in 12 ml Dulbecco’s phosphate-buffered saline (DPBS, Invitrogen, Carlsbad, CA 14287) containing 0.02% BSA and 12.5U/ml DNase and filtered through a 20um Nitex mesh (Sefar America Inc., Depew NY, Lab Pak 03-20/14) to remove undissociated cell clumps. This yields a single cell suspension. Cell health is assessed by trypan blue exclusion. Only single cell suspensions with &gt;85% viability were used for purification experiments. 1μg/ml propidium iodide (PI, Sigma, St. Louis, MO, P4864) was added to the single cell solution to label dead cells. Cells were sorted on a BD Aria II cell sorter (BD Bioscience) with a 70μm nozzle. Dead cells and debris were gated first by their low forward light scatter and high side light scatter and secondly by high PI staining. Doublets were removed by high side light scatter. Cell concentration and flow rate were carefully adjusted to maximize purity. Astrocytes were identified based on high EGFP fluorescence. FACS routinely yielded &gt;99% purity based on reanalysis of sorted cells.
+Method Part2:To purify neurons, a single cell suspension was prepared as described above and incubated at 34 °C for one hour to allow expression of cell surface protein antigens digested by papain, and then incubated on two sequential panning plates coated with BSL-1 to deplete endothelial cells (10 minutes each), followed by a 30 minute incuation on a plate coated with mouse IgM anti-O4 hybridoma (Bansal et al., 1989. 4ml hybridoma supernatant diluted with 8ml DPBS/0.2% BSA) to deplete OPCs, and then incubated for 20 minutes on a plate coated with rat anti-mouse CD45 (BD Pharmingen 550539, 1.25ug in 12ml of DPBS/0.2% BSA) to deplete microglia and macrophages. Finally cells were added to a plate coated with rat anti-mouse L1CAM (30ug in 12ml of DPBS/0.2% BSA, Millipore, Billerica, MA, MAB5272) to bind neurons. The adherent cells on the L1CAM plate were washed 8 times with 10-20 ml of DPBS to remove all antigen-negative nonadherent cells, and then removed from the plate by treating with trypsin (Sigma, 1,000U/ml, T-4665) in 8ml Ca2+ and Mg2+ free EBSS (Irvine Scientific, Santa Ana, CA, 9208) for 3-10 minutes at 37°C in a 10% CO2 incubator. The trypsin was then neutralized with 20ml of fetal calf serum (FCS) solution containing 30% FCS (Gibco, 10437-028), 35% Dulbecco’s modified eagle medium (DMEM, Invitrogen, 11960-044), and 35% Neurobasal (Gibco, 21103-049). The cells were dislodged by gentle squirting of FCS solution over the plate and harvested by centrifugation at 200g for 10 minutes.
+Method Part3:To purify microglia and oligodendrocyte-lineage cells, the mice were first perfused with 10ml PBS to remove macrophage contamination from the brain. A single cell suspension was then prepared as described above and incubated 20 minutes on a plate coated with rat anti-mouse CD45 (BD Pharmingen 550539, 1.25ug in 12ml of DPBS/0.2% BSA) to harvest microglia, and then incubated sequentially on four BSL1 coated plates (8 minutes each) to deplete endothelial cells and remaining microglia. The remaining cells were next incubated for 30 minutes on a rat anti-PDGFRα (10ug in 12ml DPBS/0.2% BSA, Fitzgerald, Acton, MA, 10R-CD140aMS) coated plate to harvest OPCs, and then incubated on an additional PDGFRα plate and mouse A2B5 monoclonal antibody ascites (American Type Culture Collection, Rockville, MD) coated plate for 30 minutes each to deplete remaining OPCs. The cell suspension was next incubated on an anti-MOG hybridoma coated plate for 30 minutes to harvest myelinating oligodendrocytes, followed by an additional anti-MOG hybridoma coated plate for 30 minutes to deplete any remaining myelinating oligodendrocytes. Finally, the cell suspension was incubated on an anti-GalC hybridoma coated plate for 30 minutes to harvest newly formed oligodendrocytes. For purification of RNA, the cells were lysed while still attached to the panning plate with Qiazol reagent (Qiagen 217004), and total RNA was purified as described below.
+Mehtod Part4:To purify endothelial cells, we took advantage of Tie2-EGFP transgenic mice available from Jackson labs. These mice express EGFP under the pan-endothelial Tie2 promotor (Daneman et al., 2010; Motoike et al., 2000). Single cell suspension was prepared and FACS was performed as described above.
+Method Part5: RNA-Seq was performed on the polyadenylated fraction of RNA isolated from purified cell samples.Two biological replicates were used for each phase.100 ng total RNAs were used for each sequencing library. RNA samples were polyA selected and paired-end sequencing libraries were constructed using TruSeq RNA Sample Prep Kit as described in the TruSeq RNA Sample Preparation V2 Guide (Illumina).The samples were then sequenced using the Illumina HiSeq 2000 sequencer.
+Method Part6: Read mapping and Transcriptome construction were done by using optimized pipeline which integrate Tophat followed by Cufflinks.
+Result:We purified neurons, astrocytes, oligodendrocyte precursor cells (OPCs), newly formed oligodendrocytes (NFOs), myelinating oligodendrocytes (MOs), microglia, endothelial cells and pericytes from mouse cortex and used RNA-Seq to generate a high resolution transcriptome database of &gt; 22,000 genes. We identified thousands of novel cell type-enriched genes that have not been previously identified. These include novel transcription factors, ligands, receptors, enzymes, and signaling molecules. We then used a novel splice mapping algorithm to identify thousands of cell type-specific alternative splicing events.
+Conclusion:We generated a transcriptome database for these 8 cell types by RNA sequencing and used a highly sensitive algorithm to detect alternative splicing events in each gene. Our analysis i
+    </Summary>
+    <Overall-Design>
+mRNA profiles of purified cell samples from mice were generated by RNA-sequencing,  in duplicate, using Illumina HiSeq 2000.
+    </Overall-Design>
+    <Type>Expression profiling by high throughput sequencing</Type>
+    <Contributor-Ref ref="contrib3" position="1" />
+    <Contributor-Ref ref="contrib1" position="2" />
+    <Contributor-Ref ref="contrib4" position="3" />
+    <Contributor-Ref ref="contrib5" position="4" />
+    <Contributor-Ref ref="contrib6" position="5" />
+    <Contributor-Ref ref="contrib7" position="6" />
+    <Contributor-Ref ref="contrib8" position="7" />
+    <Contributor-Ref ref="contrib9" position="8" />
+    <Contributor-Ref ref="contrib10" position="9" />
+    <Contributor-Ref ref="contrib11" position="10" />
+    <Contact-Ref ref="contrib1" />
+    <Sample-Ref ref="GSM1269903" />
+    <Sample-Ref ref="GSM1269904" />
+    <Sample-Ref ref="GSM1269905" />
+    <Sample-Ref ref="GSM1269906" />
+    <Sample-Ref ref="GSM1269907" />
+    <Sample-Ref ref="GSM1269908" />
+    <Sample-Ref ref="GSM1269909" />
+    <Sample-Ref ref="GSM1269910" />
+    <Sample-Ref ref="GSM1269911" />
+    <Sample-Ref ref="GSM1269912" />
+    <Sample-Ref ref="GSM1269913" />
+    <Sample-Ref ref="GSM1269914" />
+    <Sample-Ref ref="GSM1269915" />
+    <Sample-Ref ref="GSM1269916" />
+    <Sample-Ref ref="GSM1269917" />
+    <Sample-Ref ref="GSM1269918" />
+    <Sample-Ref ref="GSM1269919" />
+    <Supplementary-Data type="SRA Study">
+ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByStudy/sra/SRP/SRP033/SRP033200
+    </Supplementary-Data>
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/pub/geo/DATA/supplementary/series/GSE52564/GSE52564_RAW.tar
+    </Supplementary-Data>
+    <Relation type="BioProject" target="http://www.ncbi.nlm.nih.gov/bioproject/PRJNA229389" />
+    <Relation type="SRA" target="http://www.ncbi.nlm.nih.gov/sra?term=SRP033200" />
+  </Series>
+
+</MINiML>
