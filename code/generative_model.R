@@ -4,6 +4,7 @@ library(ggplot2)
 universe <- rnorm(5000, 2, 0.75)
 qplot(universe, geom='histogram')
 
+#http://stats.stackexchange.com/questions/95120/simulate-dirichlet-process-in-r
 dirichlet_sample <- function(n, samples, c){
   
   #Determining beta dist
