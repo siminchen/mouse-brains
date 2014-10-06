@@ -1,10 +1,8 @@
 DATA GENERATION
-Astrocytes1
-Astrocytes2
 Neuron1 
 Neuron2
-Endothelial1
-Endothelial2
+Endothelial1 - *uploading*
+Endothelial2 - *uploading*
 WC2 *N - uploading*
 WC3 *N - uploading*
 
