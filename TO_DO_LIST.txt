@@ -1,0 +1,16 @@
+DATA GENERATION
+Astrocytes1
+Astrocytes2
+Neuron1 
+Neuron2
+Endothelial1
+Endothelial2
+WC2 *N - uploading*
+WC3 *N - uploading*
+
+DATA QC
+Removing minimally expressed values
+Project data to standard distribution?
+
+LITERATURE SEARCH
+Meet on Thursday 4:30pm
