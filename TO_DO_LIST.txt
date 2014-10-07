@@ -1,8 +1,6 @@
 DATA GENERATION
 Neuron1 *N - uploading*
 Neuron2 *N - uploading*
-Endothelial1 - *uploading*
-Endothelial2 - *uploading*
 
 DATA QC
 Removing minimally expressed values
