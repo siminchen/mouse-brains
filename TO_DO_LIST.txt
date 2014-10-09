@@ -7,4 +7,12 @@ Removing minimally expressed values
 Project data to standard distribution?
 
 LITERATURE SEARCH
-Meet on Thursday 4:30pm
+Hierarchical Dirichlet Processes
+The Infinite Gaussian Mixture Model
+Functional Genomic Analysis of Oligodendrocyte Differentiation
+Glia - more than just brain glue
+HDP Microarray Paper *Not yet on repo - will be in 5 minutes*
+
+Second Tier Priority
+Comparison of D. melanogaster and C. elegans
+Content-Based Musical Similarity Computation Using the Hierarchical Dirichlet Process
