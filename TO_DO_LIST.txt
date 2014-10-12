@@ -9,7 +9,9 @@ Project data to standard distribution?
 LITERATURE SEARCH
 Hierarchical Dirichlet Processes
 The Infinite Gaussian Mixture Model
-Functional Genomic Analysis of Oligodendrocyte Differentiation
+Functional Genomic Analysis of Oligodendrocyte Differentiation - 
+- Download dataset, plot time-series data
+- Present time-series figure during class, talk about how the gene trajectory doesn't look strictly like two simple, easy clusters
 Glia - more than just brain glue
 HDP Microarray Paper *Not yet on repo - will be in 5 minutes*
 
