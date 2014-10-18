@@ -1,19 +1,26 @@
+HIGH LEVEL GOALS
+-Finish data generation
+-Finish literature review
+-Gain the faintest clue about how to run the models
+-Run the models
+
 DATA GENERATION
-Neuron1 *N - uploading*
-Neuron2 *N - uploading*
+Rerun Microglia (sample2) mapping (tophat->cufflinks)
+Merge transcripts into one file (cuffmerge)
+"Normalize" (a.k.a. put them into a reasonable format - cuffquant->cuffnorm)
 
 DATA QC
 Removing minimally expressed values
 Project data to standard distribution?
 
 LITERATURE SEARCH
-Hierarchical Dirichlet Processes
+Hierarchical Dirichlet Processes+
 The Infinite Gaussian Mixture Model
-Functional Genomic Analysis of Oligodendrocyte Differentiation - 
+Functional Genomic Analysis of Oligodendrocyte Differentiation - +
 - Download dataset, plot time-series data
 - Present time-series figure during class, talk about how the gene trajectory doesn't look strictly like two simple, easy clusters
 Glia - more than just brain glue
-HDP Microarray Paper *Not yet on repo - will be in 5 minutes*
+HDP Microarray Paper
 
 Second Tier Priority
 Comparison of D. melanogaster and C. elegans
