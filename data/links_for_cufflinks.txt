@@ -34,3 +34,6 @@ Endothelial2
 https://usegalaxy.org/datasets/bbd44e69cb8906b5d4f63ff7aabe682c/display?to_ext=
 https://usegalaxy.org/datasets/bbd44e69cb8906b51ddcc3fe96642f89/display?to_ext=
 
+Microglia2
+https://usegalaxy.org/datasets/bbd44e69cb8906b5b93327d55c31acbf/display?to_ext=
+https://usegalaxy.org/datasets/bbd44e69cb8906b5c379044ce4bee6ca/display?to_ext=
