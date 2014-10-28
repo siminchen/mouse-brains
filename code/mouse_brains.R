@@ -1,27 +1,78 @@
 library(ggplot2)
 library(reshape2)
+library(preprocessCore)
 
-d <- read.csv('../data/barreslab_rnaseq.csv')
+d <- read.table('formatted_data.table',header=T)
 
-#Getting rid of gene description
-d <- d[-2]
+set.seed <- 071738561
+
+#==============================================
+#Preliminary QC - censoring & log transformation
+#==============================================
+
 #Setting gene names as row names
 rownames(d) <- d[,1]
-d <- d[-1]
 
-#Raw data density plot
-d_formatted <- melt(d)
-colnames(d_formatted) <- c('cell_type','fpkm')
-ggplot(d_formatted, aes(x=fpkm, fill=cell_type)) + geom_density()
+#log10 transformation
+d[,3:ncol(d)] <- log10(d[,3:ncol(d)])
 
-#log10 data density plot
-d_log10 <- log10(d)
-d_flog10 <- melt(d_log10)
-colnames(d_flog10) <- c('cell_type','fpkm')
-ggplot(d_flog10, aes(x=fpkm, fill=cell_type, group=cell_type)) + geom_density(alpha=0.3)
+#getting rid of genes for which the minimum expression by any
+# cell type is 1e-10
+d <- d[ apply(d[,3:ncol(d)],1,max) > -500, ]
 
-#Removing genes with a max 0.4 (lowest) value
-d_nomin <- d[apply(d,1,max) > 0.4,]
+#Setting all values lower than 1e-10 to 1e-10
+values <- d[,3:ncol(d)]
+values[values < -500] <- -500
+target <- rnorm(nrow(d))
+values <- normalize.quantiles.use.target(as.matrix(values),target)
+d[,3:ncol(d)] <- values
+
+#==============================================
+#Plotting Data
+#==============================================
+#Getting rid of gene descriptions for reformatting
+# and plotting
+plot_d <- d[-(1:2)]
+
+plot_d <- melt(plot_d)
+colnames(plot_d) <- c('cell_type','fpkm')
+ggplot(plot_d, 
+    aes(x=fpkm, fill=cell_type, group=cell_type)) + 
+    geom_density(alpha=0.3) +
+    facet_wrap(~ cell_type)
+
+#==============================================
+#QQ plots
+#==============================================
+#Selecting a column from the ORIGINAL data matrix
+qqd <- read.table('formatted_data.table',header=T)
+#log10 transformation
+qqd[,3:ncol(d)] <- log10(qqd[,3:ncol(d)])
+
+qqtest <- qqd$Astrocytes2
+qqtest <- qqtest[is.finite(qqtest)]
+qqtest <- sort(qqtest)
+
+#Straight q-q plot(norm)
+qqnorm <- rnorm(length(qqtest), mean(qqtest), sd(qqtest))
+qqnorm <- sort(qqnorm)
+
+plot(qqtest, qqnorm, main='Single Cell-Type QQplot (Normal)')
+abline(mean(qqtest), 1)
+
+#Censoring values below 1e-3
+qqtest <- qqtest[qqtest > -3]
+qqnorm <- rnorm(length(qqtest), mean(qqtest), sd(qqtest))
+qqnorm <- sort(qqnorm)
+
+plot(qqtest, qqnorm, main='Single Cell-Type QQplot w/ Censoring (Normal)')
+abline(mean(qqtest), 1)
+
+#==============================================
+#CODE BELOW NOT IN USE CURRENTLY
+#==============================================
+
+
 
 #New log10 plot (no min values)
 d_nomin_log10 <- log10(d_nomin)
@@ -46,16 +97,3 @@ ggplot(u_df,aes(x=X3,y=X4)) + geom_point()
 first2000 <- as.matrix(d_nomin[1:2000,])
 heatmap(first2000)
 
-#Function for making a qq plot from a (hard coded) distribution
-my_qqplot <- function(x){
-  m <- mean(x)
-  sd <- sd(x)
-  n <- length(x)
-  
-  probs <- (1:n)/(n+1)
-  
-  quants <- qchisq(probs, m)
-  
-  plot(sort(quants), sort(x))
-  abline(0,1)
-}
