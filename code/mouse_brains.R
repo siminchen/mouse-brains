@@ -14,33 +14,52 @@ set.seed <- 071738561
 rownames(d) <- d[,1]
 
 #log10 transformation
+#not purely necessary, as the quantile normalization will
+#squash the difference made here, but good for display purposes
 d[,3:ncol(d)] <- log10(d[,3:ncol(d)])
 
 #getting rid of genes for which the minimum expression by any
 # cell type is 1e-10
 d <- d[ apply(d[,3:ncol(d)],1,max) > -500, ]
 
-#Setting all values lower than 1e-10 to 1e-10
+#Quantile Normalization
 values <- d[,3:ncol(d)]
-values[values < -500] <- -500
-target <- rnorm(nrow(d))
-values <- normalize.quantiles.use.target(as.matrix(values),target)
-d[,3:ncol(d)] <- values
+normalized_values <- as.matrix(values)
+#crappy code - but I'm not sure how to index an element out 
+# of the result of an 'apply' function like this
+for(i in 1:dim(values)[1]){
+  normalized_values[i,] <- qqnorm(values[i,], plot.it=F)$x
+}
+nd <- d
+nd[,3:ncol(nd)] <- normalized_values
 
+#Setting low values of the log10 data to -1e10
+#(doing this after normalization to not introduce false ties)
+values[values < -10] <- -10
+d[,3:ncol(d)] <- values
 #==============================================
 #Plotting Data
 #==============================================
 #Getting rid of gene descriptions for reformatting
 # and plotting
 plot_d <- d[-(1:2)]
+plot_nd <- nd[-(1:2)]
 
 plot_d <- melt(plot_d)
 colnames(plot_d) <- c('cell_type','fpkm')
 ggplot(plot_d, 
     aes(x=fpkm, fill=cell_type, group=cell_type)) + 
     geom_density(alpha=0.3) +
-    facet_wrap(~ cell_type)
+    facet_wrap(~ cell_type) +
+    labs(title = "Before Quantile Normalization")
 
+plot_nd <- melt(plot_nd)
+colnames(plot_nd) <- c('cell_type','fpkm')
+ggplot(plot_nd, 
+    aes(x=fpkm, fill=cell_type, group=cell_type)) + 
+    geom_density(alpha=0.3) +
+    facet_wrap(~ cell_type) +
+    labs(title = "After Quantile Normalization")
 #==============================================
 #QQ plots
 #==============================================
@@ -67,6 +86,11 @@ qqnorm <- sort(qqnorm)
 
 plot(qqtest, qqnorm, main='Single Cell-Type QQplot w/ Censoring (Normal)')
 abline(mean(qqtest), 1)
+#==============================================
+#Saving normalized data
+#==============================================
+write.table(nd, 'formatted_normalized_data.table')
+
 
 #==============================================
 #CODE BELOW NOT IN USE CURRENTLY
