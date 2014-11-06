@@ -1,27 +1,7 @@
 HIGH LEVEL GOALS
--Finish data generation
--Finish literature review
--Gain the faintest clue about how to run the models
--Run the models
+-Gain the faintest clue about how these models work
+-Annotate genome
+-Figure out a way to run and display "vanilla" HDP
+-Run CSIMM rather than DCIM, figure out better display
 
-DATA GENERATION
-Rerun Microglia (sample2) mapping (tophat->cufflinks)
-Merge transcripts into one file (cuffmerge)
-"Normalize" (a.k.a. put them into a reasonable format - cuffquant->cuffnorm)
 
-DATA QC
-Removing minimally expressed values
-Project data to standard distribution?
-
-LITERATURE SEARCH
-Hierarchical Dirichlet Processes+
-The Infinite Gaussian Mixture Model
-Functional Genomic Analysis of Oligodendrocyte Differentiation - +
-- Download dataset, plot time-series data
-- Present time-series figure during class, talk about how the gene trajectory doesn't look strictly like two simple, easy clusters
-Glia - more than just brain glue
-HDP Microarray Paper
-
-Second Tier Priority
-Comparison of D. melanogaster and C. elegans
-Content-Based Musical Similarity Computation Using the Hierarchical Dirichlet Process
