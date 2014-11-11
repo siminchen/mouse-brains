@@ -1,6 +1,6 @@
 library(ggplot2)
 library(reshape2)
-library(preprocessCore)
+#library(preprocessCore)
 
 d <- read.table('formatted_data.table',header=T)
 
@@ -32,6 +32,13 @@ for(i in 1:dim(values)[1]){
 }
 nd <- d
 nd[,3:ncol(nd)] <- normalized_values
+
+#Creating a fake "multinomial" version of the data by rounding
+md <- nd
+md_values <- md[,3:ncol(md)]
+md_values <- round(1000 * md_values)
+md_values <- md_values - min(md_values)
+md[,3:ncol(md)] <- md_values
 
 #Setting low values of the log10 data to -1e10
 #(doing this after normalization to not introduce false ties)
@@ -90,7 +97,7 @@ abline(mean(qqtest), 1)
 #Saving normalized data
 #==============================================
 write.table(nd, 'formatted_normalized_data.table')
-
+write.table(md, 'formatted_multinomialed_data.table')
 
 #==============================================
 #CODE BELOW NOT IN USE CURRENTLY
