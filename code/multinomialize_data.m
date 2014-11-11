@@ -7,10 +7,16 @@ for i = 1:length(data_cell_array)
 	old_array = data_cell_array{i};
 	new_array = zeros(sum(old_array));
 
+	new_index = 1;
 	for j = 1:length(old_array)
 
 		while old_array(j) > 0
-			new_array(j) = new_array(j) + 1;
+
+			old_array(j) = old_array(j)-1;
+			new_array(new_index) = j;
+
+			new_index = new_index+1;
+
 		end % while
 
 	end % for - array index
