@@ -1,5 +1,6 @@
-function newdata =  multinomialize_data(data_cell_array)
+function newdata = multinomialize_data(data_cell_array)
 % Yes, I know this code is really dumb - I just want this done by tomorrow if possible
+length(data_cell_array)
 new_data = cell(length(data_cell_array), 1);
 
 for i = 1:length(data_cell_array)
