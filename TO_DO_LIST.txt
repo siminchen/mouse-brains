@@ -1,7 +1,6 @@
 HIGH LEVEL GOALS
--Gain the faintest clue about how these models work
+-Fix write-up according to feedback
+-Supplement the Model Section (Add QC)
+-Gain a better clue about how these models work
 -Annotate genome
 -Figure out a way to run and display "vanilla" HDP
--Run CSIMM rather than DCIM, figure out better display
-
-
