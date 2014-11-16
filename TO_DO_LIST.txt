@@ -1,6 +1,11 @@
+IMMEDIATE GOALS
+-Compare beta weights across samples
+-Generate simulated data, run through HDP
+-Write a more detailed Methods section
+
 HIGH LEVEL GOALS
--Fix write-up according to feedback
--Supplement the Model Section (Add QC)
+-Design a comparison of variability
+-Validate Results of comparison
+-Complete lit search of gene expression clustering
 -Gain a better clue about how these models work
 -Annotate genome
--Figure out a way to run and display "vanilla" HDP
